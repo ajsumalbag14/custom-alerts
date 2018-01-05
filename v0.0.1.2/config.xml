@@ -1,0 +1,2 @@
+<?xml version="1.0"?>
+<config><appname>Lassu, Inc. App</appname><version>0.0.1.1</version><provider>MySQL</provider><server>localhost:3306</server><database>zumiez</database><usr>root</usr><pwd>55-49-48-50-85-83-83-65-76-110-105-118-114-64</pwd><max_exec_time>10800</max_exec_time><settings><session_timeout>15</session_timeout></settings></config>
