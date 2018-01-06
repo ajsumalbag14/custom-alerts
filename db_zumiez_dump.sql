@@ -1,0 +1,383 @@
+-- MySQL dump 10.13  Distrib 5.7.18, for osx10.12 (x86_64)
+--
+-- Host: localhost    Database: zumiez
+-- ------------------------------------------------------
+-- Server version	5.7.18
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `TBLADMIN`
+--
+
+DROP TABLE IF EXISTS `TBLADMIN`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `TBLADMIN` (
+  `ID` bigint(11) NOT NULL AUTO_INCREMENT,
+  `USERNAME` varchar(45) DEFAULT NULL,
+  `PASSWORD` varchar(45) DEFAULT NULL,
+  `NAME` varchar(45) DEFAULT NULL,
+  `ACCES` varchar(45) DEFAULT NULL,
+  `EMAIL` varchar(45) DEFAULT NULL,
+  `STATUS` varchar(45) DEFAULT NULL,
+  `IMG` varchar(100) DEFAULT NULL,
+  `STORE` varchar(45) DEFAULT NULL,
+  `COMPANY` varchar(45) DEFAULT NULL,
+  `LOC` varchar(45) DEFAULT NULL,
+  `LOB` varchar(45) DEFAULT NULL,
+  `FORMAT` varchar(45) DEFAULT NULL,
+  `LOGTIME` varchar(45) DEFAULT NULL,
+  `LOGOUT` varchar(45) DEFAULT NULL,
+  `LASTUPDATE` varchar(45) DEFAULT NULL,
+  `UPDATEDBY` varchar(45) DEFAULT NULL,
+  `FIRST_TIME` int(11) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `TBLADMIN`
+--
+
+LOCK TABLES `TBLADMIN` WRITE;
+/*!40000 ALTER TABLE `TBLADMIN` DISABLE KEYS */;
+INSERT INTO `TBLADMIN` VALUES (1,'Admin','wtyfwyxnsnriFd:576<657d9876d:576<657','Administrator','Super','ajsumalbag14@gmail.com','Active',NULL,NULL,NULL,'::1',NULL,NULL,'IN','OUT','','1',1),(4,'jim','snkknwL%rnOd:576<657diw5|xxEUd:576<657','Jim Griffin','Super','arvin.sumalbag@lassu.net','Active','1513064006_img_jim.jpg',NULL,NULL,'::1','All',NULL,'IN','OUT','','4',1),(5,'kabels','xqjgF%sjwfPd:576<657d=6<6RZ_gfpd:576<657','Karen Abels','Super','ajsumalbag14@gmail.com','Active','1513063178_img_karen-abels.jpg',NULL,NULL,'::1','All',NULL,'IN','OUT','','4',1),(6,'wrork','pwtW%~isjd:576<657d=6<6RZ_tw|d:576<657','Wendy Rork','Super','ajsumalbag14@gmail.com','Active','1513063199_img_wendy-rork.jpg',NULL,NULL,'::1','All',NULL,'IN','OUT','','4',1);
+/*!40000 ALTER TABLE `TBLADMIN` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `TBLADMINPERM`
+--
+
+DROP TABLE IF EXISTS `TBLADMINPERM`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `TBLADMINPERM` (
+  `ID` bigint(11) NOT NULL AUTO_INCREMENT,
+  `ADMINID` bigint(11) DEFAULT NULL,
+  `MSUPER` int(11) DEFAULT NULL,
+  `MAREA` int(11) DEFAULT NULL,
+  `MSTORE` int(11) DEFAULT NULL,
+  `MGLP` int(11) DEFAULT NULL,
+  `MFORMAT` int(11) DEFAULT NULL,
+  `SETTING` int(11) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `TBLADMINPERM`
+--
+
+LOCK TABLES `TBLADMINPERM` WRITE;
+/*!40000 ALTER TABLE `TBLADMINPERM` DISABLE KEYS */;
+INSERT INTO `TBLADMINPERM` VALUES (1,1,1,1,1,1,1,1),(3,4,1,0,1,1,1,0),(4,5,0,0,1,1,1,1),(5,6,0,0,1,1,1,1);
+/*!40000 ALTER TABLE `TBLADMINPERM` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `TBLADMINPPS`
+--
+
+DROP TABLE IF EXISTS `TBLADMINPPS`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `TBLADMINPPS` (
+  `ID` bigint(11) NOT NULL AUTO_INCREMENT,
+  `PWDLEN` int(11) DEFAULT NULL,
+  `BI_NUM` int(11) DEFAULT NULL,
+  `BI_CASE` int(11) DEFAULT NULL,
+  `BI_CHAR` int(11) DEFAULT NULL,
+  `BI_CHANGE` int(11) DEFAULT NULL,
+  `CHANGE_DAYS` int(11) DEFAULT NULL,
+  `UPDATEDBY` varchar(45) DEFAULT NULL,
+  `UPDATEDTE` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `TBLADMINPPS`
+--
+
+LOCK TABLES `TBLADMINPPS` WRITE;
+/*!40000 ALTER TABLE `TBLADMINPPS` DISABLE KEYS */;
+INSERT INTO `TBLADMINPPS` VALUES (1,8,1,0,0,0,0,'Administrator','2017-12-05 15:34:50');
+/*!40000 ALTER TABLE `TBLADMINPPS` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `TBLALERTRESP`
+--
+
+DROP TABLE IF EXISTS `TBLALERTRESP`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `TBLALERTRESP` (
+  `ID` bigint(20) NOT NULL AUTO_INCREMENT,
+  `STATUS` varchar(45) DEFAULT 'Open',
+  `ALERT` varchar(50) DEFAULT NULL,
+  `TRXN_ID` bigint(20) DEFAULT NULL,
+  `TRXN_DATE` date DEFAULT NULL,
+  `DISPCODE` varchar(20) DEFAULT NULL,
+  `SANCCODE` varchar(20) DEFAULT NULL,
+  `COMMENTS` varchar(500) DEFAULT NULL,
+  `ITEM_CASE` varchar(20) DEFAULT NULL,
+  `CDATE` datetime DEFAULT NULL,
+  `UDATE` varchar(255) DEFAULT NULL,
+  `USERID` int(11) DEFAULT NULL,
+  `CARDNO` varchar(120) DEFAULT NULL,
+  `COMPANY` varchar(50) DEFAULT NULL,
+  `STORE` varchar(50) DEFAULT NULL,
+  `STRMGR` int(11) DEFAULT NULL,
+  `REMARKS` varchar(500) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `TBLALERTRESP`
+--
+
+LOCK TABLES `TBLALERTRESP` WRITE;
+/*!40000 ALTER TABLE `TBLALERTRESP` DISABLE KEYS */;
+/*!40000 ALTER TABLE `TBLALERTRESP` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `rpt_filters_all`
+--
+
+DROP TABLE IF EXISTS `rpt_filters_all`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `rpt_filters_all` (
+  `ID` bigint(11) NOT NULL AUTO_INCREMENT,
+  `USERID` bigint(11) DEFAULT NULL,
+  `PARAMID` int(11) DEFAULT NULL,
+  `REGION` varchar(100) DEFAULT NULL,
+  `DISTRICT` varchar(100) DEFAULT NULL,
+  `STORE` varchar(100) DEFAULT NULL,
+  `MANAGER` varchar(100) DEFAULT NULL,
+  `STATUS` varchar(100) DEFAULT NULL,
+  `LOCATION` varchar(100) DEFAULT NULL,
+  `LIFESTYLE` varchar(100) DEFAULT NULL,
+  `ASSOC` varchar(100) DEFAULT NULL,
+  `DAYPART` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `rpt_filters_all`
+--
+
+LOCK TABLES `rpt_filters_all` WRITE;
+/*!40000 ALTER TABLE `rpt_filters_all` DISABLE KEYS */;
+INSERT INTO `rpt_filters_all` VALUES (2,4,2,'CANADA WEST REGION','null','null','null','null','null','null','null','null'),(3,4,3,'CANADA EAST REGION#CANADA WEST REGION','null','null','null','null','null','null','null','null'),(4,4,4,'null','null','null','null','null','STREET','null','null','null');
+/*!40000 ALTER TABLE `rpt_filters_all` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `rpt_param`
+--
+
+DROP TABLE IF EXISTS `rpt_param`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `rpt_param` (
+  `ID` bigint(11) NOT NULL AUTO_INCREMENT,
+  `USERID` bigint(11) DEFAULT NULL,
+  `METRICID` varchar(3) DEFAULT NULL,
+  `STARTDATE` varchar(45) DEFAULT NULL,
+  `ENDDATE` varchar(45) DEFAULT NULL,
+  `RULE` varchar(45) DEFAULT NULL,
+  `PARAM1` int(11) DEFAULT NULL,
+  `PARAM2` int(11) DEFAULT NULL,
+  `DATE_ADDED` datetime DEFAULT NULL,
+  `DATE_UPDATED` datetime DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `rpt_param`
+--
+
+LOCK TABLES `rpt_param` WRITE;
+/*!40000 ALTER TABLE `rpt_param` DISABLE KEYS */;
+INSERT INTO `rpt_param` VALUES (2,4,'MFT','12/21/2017 ',' 01/05/2018','OT',0,0,'2018-01-05 14:21:57',NULL),(3,4,'NSL','12/21/2017 ',' 01/05/2018','OT',0,0,'2018-01-05 14:26:42',NULL),(4,4,'STR','12/21/2017 ',' 01/05/2018','All',0,0,'2018-01-05 14:52:48',NULL);
+/*!40000 ALTER TABLE `rpt_param` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_cncl`
+--
+
+DROP TABLE IF EXISTS `tbl_cncl`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_cncl` (
+  `ID` bigint(11) NOT NULL AUTO_INCREMENT,
+  `REGION` varchar(45) DEFAULT NULL,
+  `DISTRICT` varchar(45) DEFAULT NULL,
+  `STORE` varchar(45) DEFAULT NULL,
+  `MANAGER` varchar(45) DEFAULT NULL,
+  `CNCLSLS` varchar(45) DEFAULT NULL,
+  `FEEDBACK` int(11) DEFAULT '0',
+  `NOTI` int(11) DEFAULT '0',
+  `CLOSED` int(11) DEFAULT '0',
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_cncl`
+--
+
+LOCK TABLES `tbl_cncl` WRITE;
+/*!40000 ALTER TABLE `tbl_cncl` DISABLE KEYS */;
+INSERT INTO `tbl_cncl` VALUES (1,'NORTHEAST REGION','PAT SKERRITT','171','Ableson , Matt','1,969',0,0,0),(2,'SOUTHWEST REGION','JASON NEAL','130','NOMGR','1,414',0,0,0),(3,'GREAT LAKES REGION','JEREMIAH DETERTS','551','Dunbar , Allison',' 807 ',0,0,0),(4,'NORTHWEST REGION','DANNY TUITE','037','Hook , James',' 661 ',0,0,0),(5,'EASTERN REGION','ERICA MATSUDA','577','Donovski , Mihajlo',' 620 ',0,0,0),(6,'NORTHEAST REGION','PAT SKERRITT','077','Mitchell , David',' 580 ',0,0,0),(7,'NORTHEAST REGION','CONOR BRADLEY','181','Gaillard , Carissa',' 551 ',0,0,0),(8,'FOUR CORNERS REGION','SEAN BURNS','241','Ortega , Andre',' 510 ',0,0,0),(9,'NORTHEAST REGION','NICK GALLEY','378','Dionne , Carrille',' 506 ',0,0,0),(10,'FL - GULF COAST REGION','EDDIE HERRERA','337','Lange , Sheena',' 464 ',0,0,0),(11,'GREAT LAKES REGION','NICK VILLERS','348','Lemaitre , Cecilia',' 463 ',0,0,0),(12,'SO CAL . HI REGION','KELLEY SCINTO','340','Holguin , Jessica',' 459 ',0,0,0),(13,'MID ATLANTIC REGION','TODD COMBS','297','Foote , London',' 453 ',0,0,0),(14,'NORTHEAST REGION','CONOR BRADLEY','549','Conway , Emma',' 424 ',0,0,0),(15,'SO CAL . HI REGION','JAMES SIRITARANUKUL','424','Cadaoas , Jeffrey',' 422 ',0,0,0),(16,'FL - GULF COAST REGION','LAURA CRENSHAW','322','Scharff-alexander , Brittany',' 419 ',0,0,0),(17,'EASTERN REGION','PHIL IMHOF','212','Jackson , Jamal',' 408 ',0,0,0),(18,'CENTRAL REGION','DONNIE LONGTIN','365','NOMGR',' 404 ',0,0,0),(19,'WESTERN REGION','JON GLOVER','222','Warf , Kandece',' 397 ',0,0,0),(20,'NORTHWEST REGION','DANNY TUITE','350','Wilkerson , Airis',' 394 ',0,0,0),(21,'FL - GULF COAST REGION','LAURA CRENSHAW','500','Aguilar , Johana',' 381 ',0,0,0),(22,'SO CAL . HI REGION','AMANDA AAGAARD','159','NOMGR',' 370 ',0,0,0),(23,'CENTRAL REGION','LAURA SOMENZI','092','Riley , Christopher',' 369 ',0,0,0),(24,'MID ATLANTIC REGION','TODD COMBS','368','Clark , Victoria',' 364 ',0,0,0),(25,'GREAT LAKES REGION','JEREMIAH DETERTS','397','NOMGR',' 358 ',0,0,0),(26,'EASTERN REGION','JUSTIN ROBERTS','240','Riehl , Shawnee',' 352 ',0,0,0),(27,'SOUTHWEST REGION','JASON NEAL','672','Alonso , Alejandro',' 341 ',0,0,0),(28,'GREAT LAKES REGION','BEN DIAZ','051','Blanchard , Jason',' 340 ',0,0,0),(29,'NORTHEAST REGION','JOHNNY DUCHARME','384','Nelson , Joseph',' 335 ',0,0,0),(30,'MID ATLANTIC REGION','TODD COMBS','358','Morris , Samantha',' 325 ',0,0,0),(31,'SOUTHWEST REGION','JASON NEAL','262','Hozie , Christopher',' 320 ',0,0,0),(32,'EASTERN REGION','JUSTIN ROBERTS','170','Hinz , Alec',' 317 ',0,0,0),(33,'SOUTH CENTRAL REGION','RYAN JOHNSON','301','Tran , Kyta',' 313 ',0,0,0),(34,'SOUTHWEST REGION','KYLE COLLINS','254','Cerda , Victor',' 305 ',0,0,0),(35,'SOUTHWEST REGION','JASON NEAL','269','Arias , Brandon',' 303 ',0,0,0),(36,'SOUTHWEST REGION','JASON NEAL','334','Torres , Jasmine',' 296 ',0,0,0),(37,'ROCKY MOUNTAIN REGION','CASE BREDEMEIER','055','Chavez , Ashley',' 295 ',0,0,0),(38,'GREAT LAKES REGION','ALEX PAJDA','054','Kelly , Dillon',' 292 ',0,0,0),(39,'SO CAL . HI REGION','JAMES SIRITARANUKUL','400','Wong , Dareyn',' 291 ',0,0,0),(40,'WESTERN REGION','PATRICK CAMP','069','Haight , Tayler',' 286 ',0,0,0),(41,'SO CAL . HI REGION','AMANDA AAGAARD','484','Jordan , Christopher',' 285 ',0,0,0),(42,'ROCKY MOUNTAIN REGION','CASE BREDEMEIER','175','NOMGR',' 271 ',0,0,0),(43,'SOUTHWEST REGION','JASON NEAL','143','Morales , Samantha',' 263 ',0,0,0),(44,'FL - GULF COAST REGION','EVIN THOMAS','239','Padilla , David',' 261 ',0,0,0),(45,'SO CAL . HI REGION','ANDREW CHRISTY','246','Kandler , Sarah',' 255 ',0,0,0),(46,'ROCKY MOUNTAIN REGION','STU JEFFERSON','442','Calhoun , Joshua',' 255 ',0,0,0);
+/*!40000 ALTER TABLE `tbl_cncl` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_custom`
+--
+
+DROP TABLE IF EXISTS `tbl_custom`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_custom` (
+  `STORE` text,
+  `MANAGER` varchar(45) DEFAULT NULL,
+  `DISTRICT` text,
+  `REGION` text,
+  `CLS` int(11) DEFAULT NULL,
+  `COS` double DEFAULT NULL,
+  `COA` double DEFAULT NULL,
+  `CMD` double DEFAULT NULL,
+  `CMP` text,
+  `CSD` text,
+  `DID` int(11) DEFAULT NULL,
+  `DIP` text,
+  `DPT` double DEFAULT NULL,
+  `EDD` double DEFAULT NULL,
+  `EDP` text,
+  `HRS` text,
+  `IVD` text,
+  `IVP` text,
+  `MGD` text,
+  `MGP` text,
+  `MFT` text,
+  `NWH` int(11) DEFAULT NULL,
+  `NSL` int(11) DEFAULT NULL,
+  `PDO` double DEFAULT NULL,
+  `PRD` double DEFAULT NULL,
+  `RTD` text,
+  `RTP` text,
+  `SLS` text,
+  `STR` text,
+  `STD` text,
+  `TRN` text,
+  `UNI` text,
+  `UPT` double DEFAULT NULL,
+  `VDS` double DEFAULT NULL,
+  `NOTI` int(11) DEFAULT '0',
+  `FEEDBACK` int(11) DEFAULT '0',
+  `CLOSED` int(11) DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_custom`
+--
+
+LOCK TABLES `tbl_custom` WRITE;
+/*!40000 ALTER TABLE `tbl_custom` DISABLE KEYS */;
+INSERT INTO `tbl_custom` VALUES ('001',NULL,'JASMINE FLORES','NORTHWEST REGION',0,-574.11,574.11,10748,'15.55%','35,442',906,'1.14%',51.65,91.47,'0.11%','612','-24,337.37','-2.54%','44,405','55.61%','100.00%',3,0,0,130.6,'-2,215','2.77%','79,847','928','47,908','1,546','3,162',2,0,0,0,0),('002',NULL,'JASMINE FLORES','NORTHWEST REGION',0,-268.95,268.95,633,'0.95%','30,590',315,'0.47%',55.08,0,'0.00%','640','-8,759.02','-1.08%','37,017','54.77%','95.63%',2,0,0,105.6,'-2,137','3.16%','67,585','736','40,551','1,227','2,427',2,0,0,0,0),('003',NULL,'SHAUNDA TIPPIE','NORTHWEST REGION',0,-260.03,260.03,738,'0.59%','54,561',626,'0.50%',51.41,25.98,'0.02%','867','-36,476.51','-2.41%','71,558','56.73%','100.00%',0,0,196.62,145.5,'-5,947','4.71%','126,129','1,472','75,677','2,453','4,397',1.8,0,0,0,0),('004',NULL,'JASMINE FLORES','NORTHWEST REGION',0,68.57,68.57,6721,'4.65%','65,841',530,'0.35%',54.14,643.33,'0.43%','1,207','-32,644.08','-1.80%','85,327','56.46%','100.00%',3,0,0,125.2,'-7,382','4.88%','151,130','1,675','90,678','2,791','5,237',1.9,0,0,0,0),('005',NULL,'GARRETT DAY','NORTHWEST REGION',0,123.26,123.26,3964,'3.58%','46,327',199,'0.17%',50.2,93.85,'0.08%','1,210','-26,004.66','-1.89%','68,308','59.57%','100.00%',2,0,32.98,94.7,'-5,472','4.77%','114,659','1,371','68,795','2,284','4,031',1.8,0,0,0,0),('011',NULL,'JASMINE FLORES','NORTHWEST REGION',0,-166.2,166.2,-1948,'-2.36%','37,138',906,'1.13%',51.75,77.66,'0.10%','559','-18,938.54','-1.96%','43,383','53.88%','100.00%',1,0,0,144,'-3,575','4.44%','80,521','934','48,313','1,556','3,319',2.1,0,0,0,0),('013',NULL,'JASMINE FLORES','NORTHWEST REGION',0,-119.81,119.81,-3204,'-6.89%','18,877',754,'1.74%',47.29,89.9,'0.21%','546','-3,530.67','-0.68%','24,391','56.37%','100.00%',0,0,20,79.3,'-1,487','3.44%','43,268','549','25,961','915','1,666',1.8,0,0,0,0),('019',NULL,'SHAUNDA TIPPIE','NORTHWEST REGION',0,-93.79,93.79,11472,'8.25%','62,811',432,'0.29%',54.48,160.29,'0.11%','1,031','-40,983.94','-2.27%','87,671','58.27%','100.00%',2,0,0,145.9,'-5,850','3.89%','150,455','1,657','90,273','2,762','4,966',1.8,0,0,0,0),('027',NULL,'GARRETT DAY','NORTHWEST REGION',0,-209.35,209.35,4310,'5.18%','38,474',319,'0.36%',59.27,126.58,'0.14%','612','-6,617.80','-0.63%','49,063','56.05%','100.00%',0,0,69.95,143,'-1,465','1.67%','87,537','886','52,522','1,477','3,316',2.2,0,0,0,0),('028',NULL,'PATRICK CAMP','WESTERN REGION',0,54.76,54.76,-20174,'-19.49%','34,234',591,'0.71%',47,0,'0.00%','664','-64,198.20','-6.42%','49,097','58.92%','100.00%',1,0,0,125.4,'-3,566','4.28%','83,331','1,064','49,999','1,773','3,641',2.1,0,0,0,0),('035',NULL,'CASSIDY PRIEST','FOUR CORNERS REGION',0,-100.75,100.75,7324,'9.94%','34,057',494,'0.61%',47.99,117.96,'0.15%','571','-21,288.11','-2.19%','46,948','57.96%','100.00%',0,0,0,141.8,'-2,922','3.61%','81,005','1,013','48,603','1,688','2,969',1.8,0,0,0,0),('036',NULL,'JON GLOVER','WESTERN REGION',0,-80.11,80.11,10295,'7.11%','64,033',578,'0.37%',50.1,68.48,'0.04%','962','-41,706.20','-2.24%','91,124','58.73%','100.00%',0,0,0,161.3,'-5,675','3.66%','155,157','1,858','93,094','3,097','5,099',1.6,0,0,0,0),('041',NULL,'GARRETT DAY','NORTHWEST REGION',0,0.76,0.76,-8472,'-12.60%','27,415',913,'1.55%',51.93,288.53,'0.49%','559','-2,398.39','-0.34%','31,369','53.36%','100.00%',0,0,27.48,105.1,'-2,332','3.97%','58,784','679','35,270','1,132','2,198',1.9,0,0,0,0),('066',NULL,'TIM KELLEY','SOUTHWEST REGION',0,353.83,353.83,-12646,'-10.57%','44,445',479,'0.45%',57.57,63.91,'0.06%','706','-13,992.07','-1.09%','62,528','58.45%','100.00%',3,0,0,151.6,'-2,492','2.33%','106,973','1,115','64,184','1,858','3,470',1.9,0,0,0,0),('078',NULL,'PAUL KELLY','THE NORTH REGION',0,107.19,107.19,12820,'12.99%','48,754',893,'0.80%',52.3,111.62,'0.10%','916','-12,578.22','-0.94%','62,755','56.28%','100.00%',1,0,122.21,121.7,'-2,876','2.58%','111,509','1,279','66,905','2,132','4,171',2,0,0,0,0),('097',NULL,'DANNY TUITE','NORTHWEST REGION',0,162.8,162.8,-7617,'-7.88%','38,923',731,'0.82%',57.46,166.76,'0.19%','720','-12,183.82','-1.14%','50,140','56.30%','93.44%',0,0,0,123.7,'-1,624','1.82%','89,063','930','53,438','1,550','3,396',2.2,0,0,0,0),('102',NULL,'TOM OVERHOLT','FOUR CORNERS REGION',0,-417.63,417.63,29535,'23.97%','66,636',416,'0.27%',57.86,192.97,'0.13%','1,072','-24,931.90','-1.36%','86,095','56.36%','100.00%',4,0,57.92,142.4,'-3,045','1.99%','152,769','1,584','91,661','2,640','5,024',1.9,0,0,0,0),('116',NULL,'SEAN BURNS','FOUR CORNERS REGION',0,24.69,24.69,66,'0.05%','52,746',543,'0.44%',47.28,40.9,'0.03%','751','-24,941.98','-1.67%','71,729','57.63%','85.00%',0,0,0,165.8,'-4,726','3.80%','124,461','1,579','74,677','2,632','4,650',1.8,0,0,0,0),('149',NULL,'ASHLY COLLINS','SO CAL . HI REGION',0,185.7,185.7,-3737,'-3.00%','50,746',688,'0.57%',50.36,171.78,'0.14%','851','-28,402.05','-1.96%','69,996','57.96%','100.00%',1,0,60.32,141.9,'-5,568','4.61%','120,757','1,439','72,454','2,398','4,174',1.7,0,0,0,0),('196',NULL,'JON TURNER','EASTERN REGION',0,136.31,136.31,18045,'23.78%','41,663',552,'0.59%',53.69,144.91,'0.15%','795','-16,793.97','-1.49%','52,251','55.63%','100.00%',0,0,0,118.1,'-2,381','2.54%','93,926','1,050','56,356','1,750','3,747',2.1,0,0,0,0),('199',NULL,'JON TURNER','EASTERN REGION',0,91.1,91.1,-778,'-1.13%','29,615',882,'1.30%',51.88,0,'0.00%','662','-9,556.47','-1.17%','38,451','56.49%','100.00%',0,0,11.73,102.8,'-2,571','3.78%','68,066','787','40,840','1,312','2,627',2,0,0,0,0),('210',NULL,'KELLEY SCINTO','SO CAL . HI REGION',0,-103.01,103.01,-11012,'-11.52%','36,318',702,'0.83%',49.48,200.02,'0.24%','612','-18,073.34','-1.78%','48,295','57.08%','100.00%',0,0,0,138.3,'-3,453','4.08%','84,613','1,026','50,768','1,710','2,876',1.7,0,0,0,0),('211',NULL,'PHIL IMHOF','EASTERN REGION',0,-54.44,54.44,2883,'3.34%','40,178',925,'1.04%',48.23,203.09,'0.23%','808','-31,552.02','-2.95%','48,929','54.90%','100.00%',2,0,0,110.3,'-2,415','2.71%','89,130','1,109','53,478','1,848','3,433',1.9,0,0,0,0),('213',NULL,'KERIANA BECK','SOUTH CENTRAL REGION',0,-69.12,69.12,-6753,'-5.85%','45,648',582,'0.54%',46.85,68.86,'0.06%','900','-24,380.16','-1.87%','62,981','57.97%','100.00%',3,0,11.91,120.7,'-3,658','3.37%','108,646','1,391','65,188','2,319','4,194',1.8,0,0,0,0),('228',NULL,'DONNIE LONGTIN','CENTRAL REGION',0,-45.72,45.72,-1348,'-1.69%','33,286',372,'0.47%',49.37,61,'0.08%','632','-12,066.05','-1.28%','45,269','57.63%','100.00%',0,0,0,124.3,'-2,470','3.14%','78,555','955','47,133','1,591','2,966',1.9,0,0,0,0),('233',NULL,'CONOR BRADLEY','NORTHEAST REGION',0,-438.43,438.43,9109,'4.90%','81,672',659,'0.34%',52.63,397.46,'0.20%','1,366','-38,171.34','-1.63%','113,478','58.15%','100.00%',3,0,7.57,142.9,'-7,966','4.08%','195,150','2,225','117,090','3,708','6,432',1.7,0,0,0,0),('266',NULL,'KELLEY SCINTO','SO CAL . HI REGION',0,208.69,208.69,11978,'10.14%','54,063',489,'0.38%',50.61,127.88,'0.10%','753','-19,990.58','-1.28%','76,051','58.43%','100.00%',0,0,90.6,172.7,'-4,807','3.69%','130,147','1,543','78,088','2,572','4,341',1.7,0,0,0,0),('277',NULL,'TIM KELLEY','SOUTHWEST REGION',0,-152.82,152.82,-8486,'-6.14%','59,183',846,'0.65%',60.1,0,'0.00%','1,033','-31,761.82','-2.04%','70,563','54.39%','95.31%',1,0,0,125.7,'-1,582','1.22%','129,746','1,295','77,848','2,159','4,298',2,0,0,0,0),('283',NULL,'KYLE COLLINS','SOUTHWEST REGION',0,-29.5,29.5,10989,'10.72%','48,057',381,'0.34%',50.44,96.86,'0.09%','868','-31,320.76','-2.30%','65,424','57.65%','100.00%',0,0,2.67,130.8,'-3,702','3.26%','113,481','1,350','68,089','2,250','3,882',1.7,0,0,0,0),('324',NULL,'GARRETT DAY','NORTHWEST REGION',0,-94.76,94.76,-1624,'-2.20%','35,796',671,'0.93%',53.06,4.97,'0.01%','650','-9,699.38','-1.12%','36,372','50.40%','100.00%',1,0,0,111.1,'-1,223','1.70%','72,168','816','43,301','1,360','3,013',2.2,0,0,0,0),('326',NULL,'TOM OVERHOLT','FOUR CORNERS REGION',0,292.54,292.54,-7139,'-5.64%','49,298',342,'0.29%',50.85,0,'0.00%','892','-8,033.42','-0.56%','70,225','58.74%','99.69%',1,0,0,134,'-3,631','3.04%','119,545','1,411','71,727','2,351','4,201',1.8,0,0,0,0),('336',NULL,'NICK GALLEY','NORTHEAST REGION',0,77.38,77.38,-648,'-0.97%','29,216',649,'0.98%',45.71,0,'0.00%','727','-16,995.36','-2.13%','37,303','56.10%','100.00%',0,0,0,91.6,'-3,208','4.82%','66,492','873','39,895','1,455','2,390',1.6,0,0,0,0),('338',NULL,'EDDIE HERRERA','FL - GULF COAST REGION',0,-89.23,89.23,-5921,'-6.02%','39,445',897,'0.97%',48.89,22.94,'0.02%','812','-23,384.54','-2.11%','52,911','57.29%','100.00%',4,0,0,113.7,'-2,020','2.19%','92,356','1,133','55,414','1,889','3,331',1.8,0,0,0,0),('349',NULL,'RYAN JOHNSON','SOUTH CENTRAL REGION',0,-748.44,748.44,5600,'10.98%','26,153',726,'1.28%',54.64,83.53,'0.15%','637','-11,546.60','-1.70%','30,451','53.80%','100.00%',3,0,0,88.8,'-949','1.68%','56,601','622','33,961','1,036','2,114',2,0,0,0,0),('355',NULL,'STU JEFFERSON','ROCKY MOUNTAIN REGION',0,-56.25,56.25,-16266,'-16.23%','37,004',949,'1.13%',47.98,63.91,'0.08%','667','-18,027.95','-1.79%','46,897','55.88%','100.00%',2,0,10.86,125.7,'-1,943','2.32%','83,929','1,050','50,357','1,749','3,066',1.8,0,0,0,0),('376',NULL,'JOHNNY DUCHARME','NORTHEAST REGION',0,88.03,88.03,-5536,'-7.46%','30,903',399,'0.58%',50.33,84.94,'0.12%','576','-19,933.93','-2.42%','37,740','54.98%','98.75%',0,0,0,119.2,'-2,343','3.41%','68,643','818','41,186','1,364','2,345',1.7,0,0,0,0),('389',NULL,'CARLINA CARBONI','MID ATLANTIC REGION',0,82.35,82.35,15176,'16.16%','46,911',687,'0.63%',53.54,14.98,'0.01%','902','-30,637.53','-2.34%','62,197','57.00%','100.00%',0,0,0,121,'-2,741','2.51%','109,108','1,223','65,465','2,038','3,975',2,0,0,0,0),('394',NULL,'CHASE FAETT','MID ATLANTIC REGION',0,53.86,53.86,-18447,'-18.03%','35,178',412,'0.49%',48.57,39.9,'0.05%','733','-51,840.31','-5.15%','48,706','58.06%','84.38%',1,0,0,114.4,'-3,418','4.07%','83,884','1,036','50,330','1,727','2,971',1.7,0,0,0,0),('420',NULL,'ERIC KESSLER','SOUTH CENTRAL REGION',0,46.64,46.64,-349,'-0.34%','43,175',494,'0.48%',48.28,39.21,'0.04%','739','-24,719.62','-2.01%','59,298','57.86%','100.00%',0,0,0,138.6,'-2,925','2.85%','102,486','1,274','61,492','2,123','3,824',1.8,0,0,0,0),('429',NULL,'JASON NEAL','SOUTHWEST REGION',0,-76.7,76.7,37032,'29.38%','68,134',183,'0.11%',52.78,165.85,'0.10%','1,197','-21,723.19','-1.11%','94,953','58.22%','100.00%',1,0,17.12,136.2,'-7,533','4.62%','163,087','1,854','97,852','3,090','5,256',1.7,0,0,0,0),('430',NULL,'KYLE COLLINS','SOUTHWEST REGION',0,-36.99,36.99,13570,'12.78%','50,661',854,'0.71%',52.88,6.49,'0.01%','773','-32,765.79','-2.28%','69,036','57.65%','100.00%',2,0,64.64,154.8,'-4,930','4.12%','119,758','1,359','71,855','2,265','4,227',1.9,0,0,0,0),('431',NULL,'SEAN BERNEY','SOUTHEAST REGION',0,-19.69,19.69,5075,'6.02%','36,670',570,'0.64%',44.33,8.36,'0.01%','610','-22,303.26','-2.08%','52,674','58.95%','100.00%',2,0,0,146.5,'-2,443','2.73%','89,356','1,209','53,614','2,016','3,329',1.7,0,0,0,0),('446',NULL,'CODY VEALS','SOUTHEAST REGION',0,200.41,200.41,-6968,'-8.63%','32,586',446,'0.60%',43.1,0.99,'0.00%','693','-38,786.65','-4.38%','41,210','55.84%','100.00%',0,0,0,106.5,'-3,431','4.65%','73,795','1,027','44,277','1,712','2,958',1.7,0,0,0,0),('462',NULL,'JEVAN NEF','NORTHWEST REGION',0,-17.94,17.94,8149,'7.25%','54,215',570,'0.47%',54.02,78.36,'0.07%','730','-16,486.18','-1.14%','66,278','55.00%','98.75%',7,0,0,165,'-3,337','2.77%','120,513','1,339','72,308','2,231','4,646',2.1,0,0,0,0),('463',NULL,'JIMMY BOYLES','SOUTHEAST REGION',0,-0.41,0.41,22022,'41.53%','31,665',648,'0.86%',48.23,0,'0.00%','623','-23,416.54','-2.60%','43,388','57.81%','100.00%',0,0,66.23,120.4,'-1,860','2.48%','75,053','934','45,032','1,556','2,716',1.7,0,0,0,0),('467',NULL,'RYAN THIESSEN','ROCKY MOUNTAIN REGION',0,-188.55,188.55,5806,'4.83%','53,869',955,'0.76%',59.16,0,'0.00%','878','-54,579.73','-3.61%','72,105','57.23%','100.00%',2,0,397.43,143.4,'-2,986','2.37%','125,992','1,278','75,595','2,130','4,317',2,0,0,0,0),('527',NULL,'BETTY BROWN','SOUTHEAST REGION',0,1247.94,1247.94,-3896,'-4.86%','32,736',627,'0.82%',46.34,64.88,'0.09%','576','-5,403.46','-0.59%','43,584','57.11%','100.00%',1,0,0,132.6,'-1,919','2.51%','76,320','988','45,792','1,647','3,045',1.8,0,0,0,0),('578',NULL,'JIMMY BOYLES','SOUTHEAST REGION',0,-3.08,3.08,12283,'13.26%','43,217',926,'0.88%',47.36,37.69,'0.04%','742','-33,121.27','-2.63%','61,693','58.79%','100.00%',0,0,0,141.3,'-4,138','3.94%','104,947','1,330','62,968','2,216','4,070',1.8,0,0,0,0),('655',NULL,'PATRICK CAMP','WESTERN REGION',0,0,0,16668,'15.53%','50,897',309,'0.25%',50.98,22.46,'0.02%','1,209','-84,689.73','-5.69%','73,136','58.96%','91.88%',1,0,0,102.6,'-3,997','3.22%','124,033','1,460','74,420','2,433','4,185',1.7,0,0,0,0),('669',NULL,'DONNIE LONGTIN','CENTRAL REGION',0,0,0,7140,'5.35%','59,736',301,'0.21%',50.91,157.9,'0.11%','1,315','-32,198.93','-1.91%','80,758','57.49%','100.00%',0,0,0,106.8,'-4,557','3.24%','140,484','1,656','84,290','2,760','5,550',2,0,0,0,0),('695',NULL,'PAUL KELLY','THE NORTH REGION',0,0,0,14430,'0.00%','6,320',0,'0.00%',54.25,0,'0.00%','517','0.00','0.00%','8,110','56.20%','97.81%',8,0,0,27.9,'-137','0.95%','14,430','160','8,658','266','622',2.3,0,0,0,0);
+/*!40000 ALTER TABLE `tbl_custom` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_disc`
+--
+
+DROP TABLE IF EXISTS `tbl_disc`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_disc` (
+  `ID` bigint(11) NOT NULL AUTO_INCREMENT,
+  `REGION` varchar(45) DEFAULT NULL,
+  `DISTRICT` varchar(45) DEFAULT NULL,
+  `STORE` varchar(45) DEFAULT NULL,
+  `MANAGER` varchar(45) DEFAULT NULL,
+  `DISC` varchar(45) DEFAULT NULL,
+  `FEEDBACK` int(11) DEFAULT '0',
+  `NOTI` int(11) DEFAULT '0',
+  `CLOSED` int(11) DEFAULT '0',
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_disc`
+--
+
+LOCK TABLES `tbl_disc` WRITE;
+/*!40000 ALTER TABLE `tbl_disc` DISABLE KEYS */;
+INSERT INTO `tbl_disc` VALUES (1,'EASTERN REGION','PHIL IMHOF','274','Baxter , Robert','25.73',0,0,0),(2,'EASTERN REGION','JUSTIN ROBERTS','170','Hinz , Alec','23.71',0,0,0),(3,'GREAT LAKES REGION','JEREMIAH DETERTS','436','Ledesma , Alyssa','21.70',0,0,0),(4,'ROCKY MOUNTAIN REGION','DANIELLE JOHNSON','205','Wood , Jonathan','20.14',0,0,0),(5,'NORTHEAST REGION','JOHNNY DUCHARME','426','Quinno , Brandon','19.66',0,0,0),(6,'NORTHWEST REGION','SHAUNDA TIPPIE','165','Tanaka , Danielle','19.37',0,0,0),(7,'FL - GULF COAST REGION','ERNESTO CALZADILLA','567','Estela , Franshelys','19.05',0,0,0),(8,'CENTRAL REGION','LUKE VILLERS','538','Peoples , Cameron','18.93',0,0,0),(9,'EASTERN REGION','JUSTIN ROBERTS','240','Riehl , Shawnee','18.70',0,0,0),(10,'FOUR CORNERS REGION','NATE HESS','476','NOMGR','18.66',0,0,0),(11,'NORTHEAST REGION','VICTORIA DIMASSA','541','Cuadrado , Elizabeth','18.61',0,0,0),(12,'THE NORTH REGION','PAUL KELLY','83','Pine , Christopher','17.82',0,0,0);
+/*!40000 ALTER TABLE `tbl_disc` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_void`
+--
+
+DROP TABLE IF EXISTS `tbl_void`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_void` (
+  `ID` bigint(11) NOT NULL AUTO_INCREMENT,
+  `REGION` varchar(45) DEFAULT NULL,
+  `DISTRICT` varchar(45) DEFAULT NULL,
+  `STORE` varchar(45) DEFAULT NULL,
+  `MANAGER` varchar(45) DEFAULT NULL,
+  `VOID` varchar(45) DEFAULT NULL,
+  `FEEDBACK` int(11) DEFAULT '0',
+  `NOTI` int(11) DEFAULT '0',
+  `CLOSED` int(11) DEFAULT '0',
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_void`
+--
+
+LOCK TABLES `tbl_void` WRITE;
+/*!40000 ALTER TABLE `tbl_void` DISABLE KEYS */;
+INSERT INTO `tbl_void` VALUES (1,'NORTHEAST REGION','CONOR BRADLEY','676','Bransfield , Dakota','1,890.02',0,0,0),(2,'NORTHWEST REGION','GARRETT DAY','012','Ayre , Jeffrey','1,642.69',0,0,0),(3,'ROCKY MOUNTAIN REGION','CASE BREDEMEIER','040','Baker , Allyson','1,570.57',0,0,0),(4,'SO CAL . HI REGION','JAMES SIRITARANUKUL','532','Bette , Nicholas','1,547.42',0,0,0),(5,'EASTERN REGION','JON TURNER','244','Bersaglia , Nicole','1,443.22',0,0,0),(6,'CENTRAL REGION','LANCE GUMZ','583','King , Braden','1,258.53',0,0,0),(7,'NORTHWEST REGION','DANNY TUITE','016','Beckman , Sarah','1,125.80',0,0,0),(8,'NORTHWEST REGION','JEVAN NEF','089','Esquibel , Raymond','1,086.97',0,0,0),(9,'ROCKY MOUNTAIN REGION','CASE BREDEMEIER','033','Perez , Juanita','1,064.46',0,0,0),(10,'GREAT LAKES REGION','ALEX PAJDA','054','Kelly , Dillon','1,007.10',0,0,0),(11,'MID ATLANTIC REGION','ADAM FONTANA','402','Buvalla , Stephen',' 894.67 ',0,0,0),(12,'FOUR CORNERS REGION','NATE HESS','049','Bringhurst , Bryan',' 819.58 ',0,0,0),(13,'FL - GULF COAST REGION','ERNESTO CALZADILLA','680','marrero , heifrel',' 773.52 ',0,0,0),(14,'THE NORTH REGION','ELISEO TORRES','530','Hacker , Jennifer',' 753.25 ',0,0,0),(15,'ROCKY MOUNTAIN REGION','DANIELLE JOHNSON','048','Daniels , Timothy',' 752.43 ',0,0,0),(16,'GREAT LAKES REGION','JENA KENNEDY','435','Blauvelt , Kathryn',' 703.74 ',0,0,0),(17,'NORTHEAST REGION','VICTORIA DIMASSA','342','Petrahai , Theodore',' 689.69 ',0,0,0),(18,'CENTRAL REGION','LAURA SOMENZI','193','Bouwens , Jacob',' 663.00 ',0,0,0),(19,'WESTERN REGION','JON GLOVER','353','Morris , Shane',' 659.43 ',0,0,0),(20,'SOUTHEAST REGION','MEGAN BARUN','390','Legg , Tyler',' 641.43 ',0,0,0),(21,'NORTHWEST REGION','DANNY TUITE','031','Miller , Ave',' 626.20 ',0,0,0),(22,'NORTHEAST REGION','NICK GALLEY','517','Carter , Sarah',' 609.96 ',0,0,0),(23,'CENTRAL REGION','DONNIE LONGTIN','131','Taskay , Jacob',' 596.95 ',0,0,0),(24,'SOUTH CENTRAL REGION','RYAN JOHNSON','311','Poehlmann , Chelsea',' 572.21 ',0,0,0),(25,'FL - GULF COAST REGION','EDDIE HERRERA','271','Amoratis , Dartagnan',' 565.94 ',0,0,0),(26,'FL - GULF COAST REGION','LAURA CRENSHAW','556','Suarez , Jose',' 560.22 ',0,0,0),(27,'FL - GULF COAST REGION','EVIN THOMAS','674','riddle , rebekah',' 547.34 ',0,0,0),(28,'GREAT LAKES REGION','ALEX PAJDA','111','Krongard , Gabrielle',' 544.47 ',0,0,0),(29,'NORTHEAST REGION','VICTORIA DIMASSA','356','Mahoney , Lauren',' 542.54 ',0,0,0),(30,'NORTHWEST REGION','DANNY TUITE','085','Brady , Tabor',' 530.62 ',0,0,0),(31,'SOUTH CENTRAL REGION','ERIC KESSLER','160','Wright , Chelsy',' 493.09 ',0,0,0),(32,'SO CAL . HI REGION','ASHLY COLLINS','127','Hubbard , Reina',' 481.40 ',0,0,0),(33,'EASTERN REGION','PHIL IMHOF','221','Hopkins , Charles',' 470.18 ',0,0,0),(34,'MID ATLANTIC REGION','ADAM FONTANA','665','NOMGR',' 469.43 ',0,0,0),(35,'NORTHEAST REGION','NICK GALLEY','333','Yates , Michelle',' 435.63 ',0,0,0),(36,'NORTHEAST REGION','CONOR BRADLEY','549','Conway , Emma',' 432.82 ',0,0,0),(37,'GREAT LAKES REGION','ALEX PAJDA','128','Comnick , Joseph',' 427.65 ',0,0,0),(38,'SOUTHEAST REGION','SEAN BERNEY','663','Brownlee , Chaz',' 424.76 ',0,0,0),(39,'MID ATLANTIC REGION','ADAM FONTANA','664','Booth , Richelle',' 410.57 ',0,0,0),(40,'SOUTH CENTRAL REGION','KATHERYN HOLZWORTH','215','Vega , Evelyn',' 409.14 ',0,0,0),(41,'SOUTHWEST REGION','JASON NEAL','143','Morales , Samantha',' 403.43 ',0,0,0),(42,'SOUTHEAST REGION','AIMEE GUERIN','564','Hanley , Brandon',' 390.28 ',0,0,0),(43,'FL - GULF COAST REGION','EDDIE HERRERA','337','Lange , Sheena',' 382.08 ',0,0,0),(44,'SOUTHEAST REGION','MEGAN BARUN','525','Pineros , Stephen',' 378.02 ',0,0,0),(45,'SOUTH CENTRAL REGION','ERIC KESSLER','411','Brock , Rodney',' 374.64 ',0,0,0),(46,'NORTHEAST REGION','NICK GALLEY','280','Brown , Alexander',' 371.63 ',0,0,0),(47,'NORTHWEST REGION','JEVAN NEF','022','Downing , Robert',' 366.35 ',0,0,0),(48,'SOUTH CENTRAL REGION','ERIC KESSLER','362','Vasquez , Matthew',' 365.80 ',0,0,0),(49,'ROCKY MOUNTAIN REGION','DANIELLE JOHNSON','237','Fraser , Jeffrey','-517.47 ',0,0,0);
+/*!40000 ALTER TABLE `tbl_void` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2018-01-06  8:35:44
