@@ -9,17 +9,17 @@
     switch($_GET['page'])
     {
         case 'DIP':
-            $col = 'Disc %';
+            $col = 'DISC';
             $tbl = 'tbl_disc';
             $title = 'Discount Percent';
         break;
         case 'CLS':
-            $col = 'Cancelled Sales';
+            $col = 'CNCLSLS';
             $tbl = 'tbl_cncl';
             $title = 'Cancelled Sales';
         break;
         case 'VDS':
-            $col = 'Void';
+            $col = 'VOID';
             $tbl = 'tbl_void';
             $title = 'Voids';
         break;
